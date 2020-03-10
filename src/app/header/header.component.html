@@ -1,0 +1,25 @@
+<mat-toolbar class="mat-elevation-z3 app-primary-color">
+  <h1>{{title}}</h1>
+  <div class="fill-remaining-space"></div>
+  <div>
+    <nav class="nav-desctop">
+      <a mat-button (click)="goToPage('')">Home</a>
+      <a mat-button (click)="goToPage('architects')">Architects</a>
+      <a mat-button (click)="goToPage('team')">Team</a>
+      <a mat-button (click)="goToPage('worklog')">Worklog</a>
+      <a mat-button (click)="goToPage('styleguide')">Styleguide</a>
+    </nav>
+    <nav class="nav-mobile">
+      <mat-menu #appMenu="matMenu" xPosition="before" class="app-primary-color">
+        <a mat-menu-item (click)="goToPage('')">Home</a>
+        <a mat-menu-item (click)="goToPage('architects')">Architects</a>
+        <a mat-menu-item (click)="goToPage('team')">Team</a>
+        <a mat-menu-item (click)="goToPage('worklog')">Worklog</a>
+        <a mat-menu-item (click)="goToPage('styleguide')">Styleguide</a>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </nav>
+  </div>
+</mat-toolbar>

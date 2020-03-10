@@ -1,0 +1,19 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.nav-desctop {
+  display: block;
+
+  @media (max-width: 679px) {
+    display: none;
+  }
+}
+
+.nav-mobile {
+  display: none;
+
+  @media (max-width: 679px) {
+    display: block;
+  }
+}
