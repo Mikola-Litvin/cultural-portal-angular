@@ -20,9 +20,7 @@ export class ContentfulService {
     environment: "info",
   });
 
-  constructor() {
-    // this.getPosts();
-  }
+  constructor() {}
 
   getPosts(query?: object): any {
     return from(
