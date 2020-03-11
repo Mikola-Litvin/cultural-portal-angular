@@ -1,7 +1,7 @@
 <div *ngIf="teamInfo | async as members">
   <div *ngFor="let member of members">
-    <p>{{member.en.name}}</p>
-    <p>{{member.en.role}}</p>
+    <p>{{member[lang].name}}</p>
+    <p>{{member[lang].role}}</p>
     <p>{{member.link}}</p>
     <p>{{member.avatar}}</p>
   </div>

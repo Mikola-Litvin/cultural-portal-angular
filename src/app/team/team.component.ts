@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../servises/contentful.service';
 import { map } from 'rxjs/operators';
+import { ContentfulService } from '../servises/contentful.service';
+import { LanguageService } from '../servises/language.service';
 
 @Component({
   selector: 'app-team',
@@ -9,11 +10,16 @@ import { map } from 'rxjs/operators';
 })
 export class TeamComponent implements OnInit {
   private teamInfoID = '29trzImNswYGvQOu9lIO5y';
-  public teamInfo = this.contentfulService.getDataById(this.teamInfoID).pipe(map((data: any) => Object.values(data)));
+  public teamInfo = this.contentfulService.getDataById(this.teamInfoID)
+    .pipe(map((data: any) => Object.values(data)));
+  public lang: string;
 
-  constructor(private contentfulService: ContentfulService) {}
+  constructor(
+    private contentfulService: ContentfulService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit(): void {
-    this.teamInfo.subscribe(data => console.log(data))
+    this.languageService.language.subscribe(data => this.lang = data);
   }
 }
