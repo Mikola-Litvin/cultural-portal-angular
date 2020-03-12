@@ -1,0 +1,56 @@
+$spacing: 30px;
+
+.card-container {
+  padding: 0 $spacing $spacing $spacing;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-width: 450px;
+  margin-top: $spacing;
+  background: #32324F;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 1700px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 350px;
+  }
+
+  @media (max-width: 1300px) {
+    max-width: 280px;
+  }
+
+  @media (max-width: 1100px) {
+    max-width: 230px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-grid-tile {
+  background: indianred;
+}

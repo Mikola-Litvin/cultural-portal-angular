@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "cultural-portal"
+  "defaultProject": "cultural-portal",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,3 +1,13 @@
-<div *ngIf="architectsInfo | async as architects">
-  <p>architects works!</p>
+<div class="card-container">
+  <mat-card *ngFor="let item of architectsArr" (click)="sendId(item.id)" class="example-card card">
+    <mat-card-header>
+      <mat-card-title class="card__title">{{ item[lang].name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="item[lang].picture" alt="architect">
+    <mat-card-content>
+      <p class="card__text">
+        {{ item[lang].summary }}
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>
