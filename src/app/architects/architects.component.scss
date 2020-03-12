@@ -1,5 +1,18 @@
+$spacing: 30px;
+
+.card-container {
+  padding: 0 $spacing $spacing $spacing;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .card {
   max-width: 450px;
+  /*margin-bottom: 30px;*/
+  margin-top: $spacing;
   background: #32324F;
 
   @media (max-width: 1700px) {
@@ -18,7 +31,21 @@
     max-width: 230px;
   }
 
+  &__title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
   &__content {
     text-align: justify;
   }
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-grid-tile {
+  background: indianred;
 }

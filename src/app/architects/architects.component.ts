@@ -18,7 +18,7 @@ export class ArchitectsComponent implements OnInit {
 
   constructor(
     private contentfulService: ContentfulService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,8 @@ export class ArchitectsComponent implements OnInit {
       this.firstEnterOnPage = false;
       return;
     }
-    this.architectsArr.length = 0;
+    console.log(responseData);
+    // this.architectsArr.length = 0;
     this.architectsArr.push(responseData.shabunevski[lang]);
   }
 }
