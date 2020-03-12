@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../servises/contentful.service';
 import {LanguageService} from '../servises/language.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-architects',
@@ -12,13 +13,14 @@ export class ArchitectsComponent implements OnInit {
   public architectsInfo = this.contentfulService.getDataById(this.architectsInfoID);
 
   private firstEnterOnPage = true;
-  private lang: string;
+  public lang: string;
   private responseData: object;
   public architectsArr: object[] = [];
 
   constructor(
     private contentfulService: ContentfulService,
     private languageService: LanguageService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,13 +35,17 @@ export class ArchitectsComponent implements OnInit {
     });
   }
 
-  private getCurrentLangData(lang, responseData): void {
+  private getCurrentLangData(lang: string, responseData): void {
     if (this.firstEnterOnPage) {
       this.firstEnterOnPage = false;
       return;
     }
     console.log(responseData);
-    // this.architectsArr.length = 0;
-    this.architectsArr.push(responseData.shabunevski[lang]);
+    this.architectsArr.length = 0;
+    responseData.data.forEach(item => this.architectsArr.push(item));
+  }
+
+  public sendId(id: string): void {
+    this.route.navigate([`/architects/${id}`]);
   }
 }

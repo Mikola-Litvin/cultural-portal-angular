@@ -11,9 +11,14 @@ $spacing: 30px;
 
 .card {
   max-width: 450px;
-  /*margin-bottom: 30px;*/
   margin-top: $spacing;
   background: #32324F;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   @media (max-width: 1700px) {
     max-width: 400px;
@@ -36,8 +41,8 @@ $spacing: 30px;
     text-align: center;
   }
 
-  &__content {
-    text-align: justify;
+  &__text {
+    text-align: center;
   }
 }
 
