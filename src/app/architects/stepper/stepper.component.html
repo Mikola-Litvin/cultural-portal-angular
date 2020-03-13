@@ -1,0 +1,38 @@
+ <mat-vertical-stepper [linear]="isLinear" >
+
+      <ng-template matStepperIcon="edit">
+        <mat-icon>panorama_fish_eye</mat-icon>
+      </ng-template>
+
+      <mat-step>
+        <ng-template matStepperIcon="number">
+          <mat-icon>panorama_fish_eye</mat-icon>
+        </ng-template>
+        <ng-template matStepLabel>{{this.year}}</ng-template>
+        <div>
+          <p>Something1</p>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepperIcon="number">
+          <mat-icon>panorama_fish_eye</mat-icon>
+        </ng-template>
+        <ng-template matStepLabel>{{this.year}}</ng-template>
+        <div>
+          <p>Something2</p>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepperIcon="number">
+          <mat-icon>panorama_fish_eye</mat-icon>
+        </ng-template>
+        <ng-template matStepLabel>{{this.year}}</ng-template>
+        <div class="white">
+          <p>Something3</p>
+        </div>
+      </mat-step>
+
+    </mat-vertical-stepper>
+
