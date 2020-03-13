@@ -1,1 +1,61 @@
 <p>ArchitectID: {{architect | async}}</p>
+<p>  {{this.architectDetails[lang].name}} </p>
+
+<mat-grid-list cols="4" rowHeight="2:5">
+
+  <mat-grid-tile>
+    {{this.architectDetails[lang].name}}
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-stepper></app-stepper>
+  </mat-grid-tile>
+
+  <mat-grid-tile  class="thirds">
+    <mat-accordion>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Biography
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+         Biography
+        </mat-panel-description>
+        <app-stepper></app-stepper>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Work
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <mat-panel-description>
+            Works of author
+          </mat-panel-description>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Work 1</mat-list-item>
+          <mat-list-item role="listitem">Work 2</mat-list-item>
+          <mat-list-item role="listitem">Work 3</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<!--<mat-expansion-panel>-->
+<!--  <mat-expansion-panel-header>-->
+<!--    <mat-panel-title>-->
+<!--      This is the expansion title-->
+<!--    </mat-panel-title>-->
+<!--  </mat-expansion-panel-header>-->
+<!--  <p>This is the primary content of the panel.</p>-->
+<!--</mat-expansion-panel>-->
