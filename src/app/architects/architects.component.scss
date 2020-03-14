@@ -1,6 +1,14 @@
 $main-color: #32324F;
 $spacing: 30px;
 
+.spinner-container {
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form-container {
   margin-top: $spacing;
 

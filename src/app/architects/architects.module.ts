@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { FilterPipe } from '../pipes/filter.pipe';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FilterPipe } from '../pipes/filter.pipe';
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatGridListModule,
