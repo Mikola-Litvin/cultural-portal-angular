@@ -12,10 +12,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 
 @NgModule({
-  declarations: [ArchitectsComponent, ArchitectComponent],
+  declarations: [ArchitectsComponent, ArchitectComponent, FilterPipe],
   imports: [
     CommonModule,
     FormsModule,
@@ -25,7 +26,7 @@ import {FormsModule} from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   exports: [
     MatGridListModule,
@@ -33,7 +34,7 @@ import {FormsModule} from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ]
 })
 export class ArchitectsModule { }

@@ -10,7 +10,7 @@
   </mat-card>
 </div>
 <div class="card-container">
-  <mat-card *ngFor="let item of architectsArr" (click)="sendId(item.id)" class="example-card card">
+  <mat-card *ngFor="let item of architectsArr | filter:architect:lang" (click)="sendId(item.id)" class="example-card card">
     <mat-card-header>
       <mat-card-title class="card__title">{{ item[lang].name }}</mat-card-title>
     </mat-card-header>
