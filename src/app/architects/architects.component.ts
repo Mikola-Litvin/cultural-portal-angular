@@ -17,6 +17,9 @@ export class ArchitectsComponent implements OnInit {
   private responseData: object;
   public architectsArr: object[] = [];
 
+  public architect: any = '';
+  public showSpinner = true;
+
   constructor(
     private contentfulService: ContentfulService,
     private languageService: LanguageService,
@@ -31,6 +34,7 @@ export class ArchitectsComponent implements OnInit {
 
     this.architectsInfo.subscribe(data => {
       this.responseData = data;
+      this.showSpinner = false;
       this.getCurrentLangData(this.lang, data);
     });
   }
