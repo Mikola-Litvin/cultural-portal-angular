@@ -17,6 +17,8 @@ export class ArchitectsComponent implements OnInit {
   private responseData: object;
   public architectsArr: object[] = [];
 
+  public architect: any = '';
+
   constructor(
     private contentfulService: ContentfulService,
     private languageService: LanguageService,
