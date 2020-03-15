@@ -17,7 +17,7 @@ export class ContentfulService {
   private cdaClient = createClient({
     space: this.CONFIG.space,
     accessToken: this.CONFIG.accessToken,
-    environment: "info",
+    environment: 'info',
   });
 
   constructor() {}
@@ -33,6 +33,6 @@ export class ContentfulService {
   }
 
   getDataById(id: string): any {
-    return from(this.cdaClient.getEntry(id)).pipe(pluck('fields'),pluck('data'));
+    return from(this.cdaClient.getEntry(id)).pipe(pluck('fields'), pluck('data'));
   }
 }

@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import { pluck } from 'rxjs/operators';
 import { ContentfulService } from '../../servises/contentful.service';
 import { LanguageService } from 'src/app/servises/language.service';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import { SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-architect',
@@ -30,7 +30,7 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
   public zoom: number;
   public safeSrc: SafeResourceUrl;
 
-  public content: object= {
+  public content: object = {
     en: {
       biography: 'Biography',
       works: 'Works',
@@ -54,8 +54,7 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
     constructor(
     private route: ActivatedRoute,
     private contentfulService: ContentfulService,
-    private languageService: LanguageService,
-    private sanitizer: DomSanitizer
+    private languageService: LanguageService
   ) {
       this.safeSrc = '';
   }
@@ -72,8 +71,8 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
     );
     // @ts-ignore
     this.arch = data.data.find(item => item.id === this.architectId);
-    this.lat = +this.arch.coords.split(",")[0];
-    this.lng = +this.arch.coords.split(",")[1];
+    this.lat = +this.arch.coords.split(',')[0];
+    this.lng = +this.arch.coords.split(',')[1];
     this.zoom = 8;
   }
 
@@ -91,7 +90,7 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
 
   public ngAfterViewChecked(): void {
 
-    if (!document.querySelector('.modal-trigger')) return;
+    if (!document.querySelector('.modal-trigger')) { return; }
 
     const body = document.body;
     const modal = document.querySelector('.modal');
@@ -121,13 +120,10 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
       closeModal(event);
     });
 
-    body.addEventListener('keypress',function(event) {
-      if (event.keyCode === 27) {
+    body.addEventListener('keypress', (event) => {
+      if (event.key === 'Escape') {
         closeModal(event);
       }
     });
   }
 }
-
-
-

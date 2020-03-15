@@ -22,7 +22,6 @@
   background-color: white;
 }
 
-
 .panel {
   background-color:  white !important;
   padding: 40px 0;
@@ -60,6 +59,7 @@
   box-sizing: border-box;
   color: white;
 }
+
 .screen {
   display: block;
   @media screen and (max-width: 1200px){
@@ -292,7 +292,6 @@ mgl-timeline-entry {
   background: rgba(12, 1, 64, 0.85);
   opacity: 0;
 }
-
 
 .modal__content {
   width: calc(100% - 12em);
