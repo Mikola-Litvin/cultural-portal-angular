@@ -1,4 +1,34 @@
+$main-color: #32324F;
 $spacing: 30px;
+
+.spinner-container {
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  margin-top: $spacing;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    width: 60%;
+    background: $main-color;
+
+    @media (max-width: 799px) {
+      width: 80%;
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
 
 .card-container {
   padding: 0 $spacing $spacing $spacing;
@@ -12,7 +42,7 @@ $spacing: 30px;
 .card {
   max-width: 450px;
   margin-top: $spacing;
-  background: #32324F;
+  background: $main-color;
   cursor: pointer;
   transition: transform 0.2s linear;
 
@@ -49,8 +79,4 @@ $spacing: 30px;
 mat-card-header {
   display: flex;
   justify-content: center;
-}
-
-mat-grid-tile {
-  background: indianred;
 }

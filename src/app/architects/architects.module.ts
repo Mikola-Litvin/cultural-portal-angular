@@ -5,10 +5,10 @@ import { ArchitectsRoutingModule } from './architects-routing.module';
 import { ArchitectsComponent } from './architects.component';
 import { ArchitectComponent } from './architect/architect.component';
 
-import {LayoutModule} from '@angular/cdk/layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -24,14 +24,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MglTimelineModule} from 'angular-mgl-timeline.9';
 import {AngularYandexMapsModule} from 'angular8-yandex-maps';
 import {BoldDirective} from './directives/bold.directive';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FilterPipe } from '../pipes/filter.pipe';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [ArchitectsComponent, ArchitectComponent, BoldDirective],
+  declarations: [ArchitectsComponent, ArchitectComponent, BoldDirective, FilterPipe],
   imports: [
     CommonModule,
+    FormsModule,
     ArchitectsRoutingModule,
-    LayoutModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
@@ -48,15 +50,18 @@ import {BoldDirective} from './directives/bold.directive';
     MatToolbarModule,
     MglTimelineModule,
     FormsModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
     AngularYandexMapsModule.forRoot (
       '23b74637-3ecf-4417-8178-bb00a0411ee9')
   ],
-
   exports: [
-    LayoutModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
     BoldDirective
   ],
   providers: [{
