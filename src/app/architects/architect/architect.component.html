@@ -1,61 +1,99 @@
-<p>ArchitectID: {{architect | async}}</p>
-<p>  {{this.architectDetails[lang].name}} </p>
+<div class="arch">
+  <section class="wrapper" *ngIf="arch">
 
-<mat-grid-list cols="4" rowHeight="2:5">
+    <section class="info">
+      <div class="info__details">
 
-  <mat-grid-tile>
-    {{this.architectDetails[lang].name}}
-  </mat-grid-tile>
+        <div class="info__photo">
+          <img class="info__size-img" mat-card-image src="{{arch[lang].picture || arch[lang].images[0]}}" alt="image">
+        </div>
+        <div class="info__text">
+          <p bold class="title">
+          <span>
+            <span bold>{{arch[lang]['dateOfBirth']}}</span><br>
+            {{arch[lang].summary}}<br>
+            {{arch[lang].city}}
+          </span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <mat-grid-tile>
-    <app-stepper></app-stepper>
-  </mat-grid-tile>
+    <section class="social">
+      <div class="social__details">
 
-  <mat-grid-tile  class="thirds">
-    <mat-accordion>
+          <div class="social__name">
+            <p bold> {{arch[lang].name}}</p>
+          </div>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Biography
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-panel-description>
-         Biography
-        </mat-panel-description>
-        <app-stepper></app-stepper>
-      </mat-expansion-panel>
+          <div class="social__time-line">
+            <span bold class="social__time-line header content" *ngIf="content">
+              {{content[lang]['biography']}}
+            </span>
+            <mgl-timeline class="social__time-line tree">
+              <mgl-timeline-entry *ngFor="let date of arch[lang]['dates']">
+                <mgl-timeline-entry-header>{{date[0]}}</mgl-timeline-entry-header>
+                <mgl-timeline-entry-content class="height">{{date[1]}}</mgl-timeline-entry-content>
+                <mgl-timeline-entry-dot [size]="20"></mgl-timeline-entry-dot>
+              </mgl-timeline-entry>
+            </mgl-timeline>
+          </div>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Work
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-          <mat-panel-description>
-            Works of author
-          </mat-panel-description>
-        <mat-list role="list">
-          <mat-list-item role="listitem">Work 1</mat-list-item>
-          <mat-list-item role="listitem">Work 2</mat-list-item>
-          <mat-list-item role="listitem">Work 3</mat-list-item>
-        </mat-list>
-      </mat-expansion-panel>
+          <div class="social__works screen">
+            <span bold class="social__works header content" *ngIf="content"> {{content[lang]['works']}} </span>
+            <mat-list role="list" class="panel">
+              <mat-list-item *ngFor="let work of arch[lang]['works']" role="listitem">
+                <p>
+                  <span bold>{{work[0]}}</span>
+                  - {{work[1]}}
+                </p>
+              </mat-list-item>
+            </mat-list>
+          </div>
 
-    </mat-accordion>
-  </mat-grid-tile>
+          <div class="social__works mob panel">
+            <span bold class="header content" *ngIf="content"> {{content[lang]['works']}} <br></span>
+            <mat-list role="list" class="list">
+              <mat-list-item style="margin-top: 25px;" *ngFor="let work of arch[lang]['works']" role="listitem">
+                <p>
+                  <span bold>{{work[0]}}</span>
+                  - {{work[1]}}
+                </p>
+              </mat-list-item>
+            </mat-list>
+          </div>
 
-  <mat-grid-tile>
-  </mat-grid-tile>
-</mat-grid-list>
+          <div class="social__search">
+
+            <div class="social__map">
+              <div>
+                <span bold class="header content" style="margin: 20px 0 20px 0;" *ngIf="content">
+                  {{content[lang].map}} <br>
+                </span>
+              </div>
+              <div class="social__yamap">
+                <p> {{arch[lang].city}} ({{lat}}, {{lng}})</p>
+                <angular-yandex-map [center]="[lat, lng]" [zoom]="12">
+                  <angular-yandex-placemark [geometry]="[lat, lng]"></angular-yandex-placemark>
+                </angular-yandex-map>
+              </div>
+            </div>
+
+            <div class="social__movie">
+              <button mat-flat-button [attr.data-id]="arch.video" class="modal-trigger">{{content[lang]['movie']}}</button>
+            </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</div>
 
 
-
-<!--<mat-expansion-panel>-->
-<!--  <mat-expansion-panel-header>-->
-<!--    <mat-panel-title>-->
-<!--      This is the expansion title-->
-<!--    </mat-panel-title>-->
-<!--  </mat-expansion-panel-header>-->
-<!--  <p>This is the primary content of the panel.</p>-->
-<!--</mat-expansion-panel>-->
+<div class="modal">
+  <div id="modal__content" class="modal__content">
+    <iframe id="youtube" class="youtube" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen src=""></iframe>
+    <button class="hide">&#10006;</button>
+  </div>
+  <div class="modal__overlay"></div>
+</div>
