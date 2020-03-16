@@ -74,6 +74,7 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
     this.lat = +this.arch.coords.split(',')[0];
     this.lng = +this.arch.coords.split(',')[1];
     this.zoom = 8;
+    console.log(this.arch);
   }
 
   public ngOnInit(): void {
