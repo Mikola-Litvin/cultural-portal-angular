@@ -1,27 +1,59 @@
-# CulturalPortal
+# Culture Portal: Architects of Belarus
+***Task:*** *https://github.com/rolling-scopes-school/tasks/blob/angular-2020Q1/tasks/angular/culture-portal.md*;
+***Deadline:***  15.03.2020 / 15.03.2020;
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+### Used tools
 
-## Development server
+* [Scully](https://github.com/scullyio/scully)
+* [Contentful](https://www.contentful.com/)
+* [Angular Material](https://material.angular.io/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Useful links
 
-## Code scaffolding
+* [Site](https://nostalgic-goldstine-17dca9.netlify.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Our team #7
 
-## Build
+* [Nikolai Shkrabkov](https://github.com/Mikola-Litvin)
+* [Evgeniy Yakimchuk](https://github.com/yakGjen)
+* [Tatsiana Kharlamava](https://github.com/Ta-tiana)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### Worklog:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Nikolai Shkrabkov
+| time spent | feature                                           |
+| ---------- | ------------------------------------------------- |
+| 1h         | Base structure of the project with Angular CLI    |
+| 3h         | Set up Scully                                     |
+| 2h         | Set up Angular Material                           |
+| 4h         | Create json files with info about architects      |
+| 1h         | Create json file with team members                |
+| 2h         | Implement page with team members                  |
+| 3h         | Implement page with worklog                       |
 
-## Running end-to-end tests
+Total: 16h
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Tatsiana Kharlamava
+| time spent | feature                                           |
+| ---------- | ------------------------------------------------- |
+| 9h         | Creating page of an author                        |
+| 4h         | Creating page with styleguide                     |
+| 2h         | Create json file with info about architects       |
 
-## Further help
+Total: 15h
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Evgeniy Yakimchuk
+| time spent | feature                                           |
+| ---------- | ------------------------------------------------- |
+| 6h         | Creating page with a list of authors              |
+| 3h         | Create json file with info about architects       |
+| 4h         | Creating main page                                |
+
+Total: 13h
+
+### Difficulties
+Lack of resources (only 3 people per team). Lack of development time due to core business. Lack of collaborative development experience.
+
+### Self-evaluation
+Points - 260

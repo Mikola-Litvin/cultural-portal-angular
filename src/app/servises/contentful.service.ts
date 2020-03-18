@@ -17,12 +17,12 @@ export class ContentfulService {
   private cdaClient = createClient({
     space: this.CONFIG.space,
     accessToken: this.CONFIG.accessToken,
-    environment: 'info',
+    environment: "info",
   });
 
   constructor() {}
 
-  getPosts(query?: object): any {
+  getData(query?: object): any {
     return from(
       this.cdaClient.getEntries({
         ...Object,

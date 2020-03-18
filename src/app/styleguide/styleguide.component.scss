@@ -1,0 +1,91 @@
+.title {
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 10px;
+
+  & p,
+  & table {
+    width: 100%;
+    max-width: 757px;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  & tr:nth-of-type(odd) {
+    background-color: #F3F3F3;
+  }
+  
+  & th {
+    padding: 17px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #32324F;
+  }
+
+  & td {
+    padding: 17px 0;
+    line-height: 1.2;
+  }
+  
+  & td:first-child {
+    padding-left: 20px;
+  }
+  
+  & td:last-child {
+    padding: 0 20px;
+  }
+}
+
+.color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000000;
+}
+
+.mat-raised-button {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #FFFFFF;
+  background-color: #32324F;
+}
+
+.points {
+  position: relative;
+  display: inline-flex;
+}
+
+.points:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #FFFFFF;
+  border: 2px solid #737373;
+  border-radius: 2px;
+}
+
+input {
+  display: none;
+}
+
+input:checked + .points:before {
+  content: "\2714";
+  background-color: #E53935;
+  border-color: #E53935;
+}

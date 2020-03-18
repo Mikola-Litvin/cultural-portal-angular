@@ -13,6 +13,11 @@ export class TeamComponent implements OnInit {
   public teamInfo = this.contentfulService.getDataById(this.teamInfoID)
     .pipe(map((data: any) => Object.values(data)));
   public lang: string;
+  public translate = {
+    by: "Нашая каманда",
+    en: "Our team",
+    ru: "Наша команда"
+  };
 
   constructor(
     private contentfulService: ContentfulService,

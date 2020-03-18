@@ -1,9 +1,7 @@
 <div class="arch">
   <section class="wrapper" *ngIf="arch">
-
     <section class="info">
       <div class="info__details">
-
         <div class="info__photo">
           <img class="info__size-img" mat-card-image src="{{arch[lang].picture || arch[lang].images[0]}}" alt="image">
         </div>
@@ -17,104 +15,82 @@
           </p>
         </div>
       </div>
-
-<!--        Gallery-->
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<!--        Indicators-->
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" *ngFor="let image of arch.images; let i = index; let first = first;" [class.active]="first" class="active" [attr.data-slide-to]="i"></li>
-        </ol>
-<!--        Slides-->
-        <div class="carousel-inner">
-          <div *ngFor="let image of arch.images; let first = first;" [class.active]="first" class="carousel-item active">
-            <img class="d-block w-100" [src]="image" alt="First slide">
+      <div *ngIf="arch.images.length" class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+        <swiper *ngIf="type == 'component' && show"
+          class="swiper-container" fxFlex="auto"
+          [config]="config" [disabled]="disabled"
+        >
+          <div *ngFor="let slide of arch.images" class="swiper-slide">
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+              <img src={{slide}} alt="">
+            </div>
           </div>
-        </div>
-<!--        Buttons-->
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+          <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+          <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+        </swiper>
       </div>
-
     </section>
-
-
     <section class="social">
       <div class="social__details">
-
-          <div class="social__name">
-            <p bold> {{arch[lang].name}}</p>
-          </div>
-
-          <div class="social__time-line">
-            <span bold class="social__time-line header content" *ngIf="content">
-              {{content[lang]['biography']}}
-            </span>
-            <mgl-timeline class="social__time-line tree">
-              <mgl-timeline-entry *ngFor="let date of arch[lang]['dates']">
-                <mgl-timeline-entry-header>{{date[0]}}</mgl-timeline-entry-header>
-                <mgl-timeline-entry-content class="height">{{date[1]}}</mgl-timeline-entry-content>
-                <mgl-timeline-entry-dot [size]="20"></mgl-timeline-entry-dot>
-              </mgl-timeline-entry>
-            </mgl-timeline>
-          </div>
-
-          <div class="social__works screen">
-            <span bold class="social__works header content" *ngIf="content"> {{content[lang]['works']}} </span>
-            <mat-list role="list" class="panel">
-              <mat-list-item *ngFor="let work of arch[lang]['works']" role="listitem">
-                <p>
-                  <span bold>{{work[0]}}</span>
-                  - {{work[1]}}
-                </p>
-              </mat-list-item>
-            </mat-list>
-          </div>
-
-          <div class="social__works mob panel">
-            <span bold class="header content" *ngIf="content"> {{content[lang]['works']}} <br></span>
-            <mat-list role="list" class="list">
-              <mat-list-item style="margin-top: 25px;" *ngFor="let work of arch[lang]['works']" role="listitem">
-                <p>
-                  <span bold>{{work[0]}}</span>
-                  - {{work[1]}}
-                </p>
-              </mat-list-item>
-            </mat-list>
-          </div>
-
-          <div class="social__search">
-
-            <div class="social__map">
-              <div>
-                <span bold class="header content" style="margin: 20px 0 20px 0;" *ngIf="content">
-                  {{content[lang].map}} <br>
-                </span>
-              </div>
-              <div class="social__yamap">
-                <p> {{arch[lang].city}} ({{lat}}, {{lng}})</p>
-                <angular-yandex-map [center]="[lat, lng]" [zoom]="12">
-                  <angular-yandex-placemark [geometry]="[lat, lng]"></angular-yandex-placemark>
-                </angular-yandex-map>
-              </div>
+        <div class="social__name">
+          <p bold> {{arch[lang].name}}</p>
+        </div>
+        <div class="social__time-line">
+          <span bold class="social__time-line header content" *ngIf="content">
+            {{content[lang]['biography']}}
+          </span>
+          <mgl-timeline class="social__time-line tree">
+            <mgl-timeline-entry *ngFor="let date of arch[lang]['dates']">
+              <mgl-timeline-entry-header>{{date[0]}}</mgl-timeline-entry-header>
+              <mgl-timeline-entry-content class="height">{{date[1]}}</mgl-timeline-entry-content>
+              <mgl-timeline-entry-dot [size]="20"></mgl-timeline-entry-dot>
+            </mgl-timeline-entry>
+          </mgl-timeline>
+        </div>
+        <div class="social__works screen">
+          <span bold class="social__works header content" *ngIf="content"> {{content[lang]['works']}} </span>
+          <mat-list role="list" class="panel">
+            <mat-list-item *ngFor="let work of arch[lang]['works']" role="listitem">
+              <p>
+                <span bold>{{work[0]}}</span>
+                - {{work[1]}}
+              </p>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div class="social__works mob panel">
+          <span bold class="header content" *ngIf="content"> {{content[lang]['works']}} <br></span>
+          <mat-list role="list" class="list">
+            <mat-list-item style="margin-top: 25px;" *ngFor="let work of arch[lang]['works']" role="listitem">
+              <p>
+                <span bold>{{work[0]}}</span>
+                - {{work[1]}}
+              </p>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div class="social__search">
+          <div class="social__map">
+            <div>
+              <span bold class="header content" style="margin: 20px 0 20px 0;" *ngIf="content">
+                {{content[lang].map}} <br>
+              </span>
             </div>
-
-            <div class="social__movie">
-              <button mat-flat-button [attr.data-id]="arch.video" class="modal-trigger">{{content[lang]['movie']}}</button>
+            <div class="social__yamap">
+              <p> {{arch[lang].city}} ({{lat}}, {{lng}})</p>
+              <angular-yandex-map [center]="[lat, lng]" [zoom]="12">
+                <angular-yandex-placemark [geometry]="[lat, lng]"></angular-yandex-placemark>
+              </angular-yandex-map>
             </div>
+          </div>
+          <div class="social__movie" *ngIf="arch.video">
+            <button mat-flat-button [attr.data-id]="arch.video" class="modal-trigger">{{content[lang]['movie']}}</button>
+          </div>
         </div>
       </div>
     </section>
-
   </section>
 </div>
-
-
 <div class="modal">
   <div id="modal__content" class="modal__content">
     <iframe id="youtube" class="youtube" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen src=""></iframe>

@@ -1,33 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/theming';
-@import '~angular-mgl-timeline.9/theme';
+// @import '~@angular/material/theming';
+// @import '~angular-mgl-timeline.9/theme';
 
 
-@include mat-core();
+// @include mat-core();
 
-$candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent:  mat-palette($mat-deep-orange, A200, A100, A400);
-$candy-app-warn:    mat-palette($mat-red);
-$candy-app-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+// $candy-app-primary: mat-palette($mat-indigo);
+// $candy-app-accent:  mat-palette($mat-deep-orange, A200, A100, A400);
+// $candy-app-warn:    mat-palette($mat-red);
+// $candy-app-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
 
-.default {
-  @include angular-material-theme($candy-app-theme);
+// .default {
+//   @include angular-material-theme($candy-app-theme);
+// }
+// .light {
+//   $light-primary: mat-palette($mat-blue, 200,300, 900);
+//   $light-accent:  mat-palette($mat-light-blue, 600, 100, 800);
+//   $light-warn:    mat-palette($mat-red, 600);
+//   $light-theme: mat-dark-theme($light-primary, $light-accent, $light-warn);
+//   @include angular-material-theme($light-theme);
+// }
+// @include angular-material-theme($candy-app-theme);
+
+html {
+  overflow-y: scroll;
 }
-.light {
-  $light-primary: mat-palette($mat-blue, 200,300, 900);
-  $light-accent:  mat-palette($mat-light-blue, 600, 100, 800);
-  $light-warn:    mat-palette($mat-red, 600);
-  $light-theme: mat-dark-theme($light-primary, $light-accent, $light-warn);
-  @include angular-material-theme($light-theme);
-}
-@include angular-material-theme($candy-app-theme);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .app-primary-color {
   background-color: #32324F;
 }
 
-@include angular-material-theme($candy-app-theme);
-@include mgl-timeline-theme($candy-app-theme);
+// @include angular-material-theme($candy-app-theme);
+// @include mgl-timeline-theme($candy-app-theme);

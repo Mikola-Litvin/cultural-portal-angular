@@ -1,5 +1,5 @@
-$main-color: #32324F;
-$spacing: 30px;
+$main-color: #F3F3F3;
+$spacing: 50px;
 
 .spinner-container {
   height: 80%;
@@ -9,15 +9,23 @@ $spacing: 30px;
   align-items: center;
 }
 
-.form-container {
-  margin-top: $spacing;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
 
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 1070px;
+  margin-bottom: $spacing;
 
   &__card {
-    width: 60%;
+    width: 100%;
     background: $main-color;
 
     @media (max-width: 799px) {
@@ -25,58 +33,69 @@ $spacing: 30px;
     }
   }
 
-  mat-form-field {
+  & .mat-card {
+    width: 100%;
+  }
+
+  & .mat-form-field {
     width: 100%;
   }
 }
 
 .card-container {
-  padding: 0 $spacing $spacing $spacing;
-
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
 }
 
 .card {
-  max-width: 450px;
-  margin-top: $spacing;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: $spacing;
+  text-align: center;
   background: $main-color;
   cursor: pointer;
-  transition: transform 0.2s linear;
+
+  @media (min-width: 675px) {
+    transition: transform 0.2s linear;
+  }
 
   &:hover {
     transform: scale(1.03);
   }
-
-  @media (max-width: 1700px) {
-    max-width: 400px;
-  }
-
-  @media (max-width: 1500px) {
-    max-width: 350px;
-  }
-
-  @media (max-width: 1300px) {
-    max-width: 280px;
-  }
-
-  @media (max-width: 1100px) {
-    max-width: 230px;
-  }
-
-  &__title {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  &__text {
-    text-align: center;
-  }
 }
 
-mat-card-header {
+.mat-card-header {
   display: flex;
   justify-content: center;
+}
+
+.mat-card-image {
+  align-self: center;
+  width: auto;
+  max-width: 300px;
+  height: 300px;
+  border: 1px solid #737373;
+}
+
+.mat-card-actions {
+  align-self: center;
+}
+
+.mat-button {
+  width: 130px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #7070AF;
+}
+
+.mat-card-content {
+  text-align: left;
 }

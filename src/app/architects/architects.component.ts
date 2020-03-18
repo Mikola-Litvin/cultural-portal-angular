@@ -12,6 +12,12 @@ export class ArchitectsComponent implements OnInit {
   private architectsInfoID = 'eqqoo4gVdSVoohQvDxlHC';
   public architectsInfo = this.contentfulService.getDataById(this.architectsInfoID);
 
+  public buttonText = {
+    by: "Падрабязней",
+    en: "See more",
+    ru: "Подробнее"
+  }
+
   private firstEnterOnPage = true;
   public lang: string;
   private responseData: object;
@@ -44,7 +50,6 @@ export class ArchitectsComponent implements OnInit {
       this.firstEnterOnPage = false;
       return;
     }
-    console.log(responseData);
     this.architectsArr.length = 0;
     responseData.data.forEach(item => this.architectsArr.push(item));
   }

@@ -1,9 +1,10 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { pluck } from 'rxjs/operators';
 import { ContentfulService } from '../../servises/contentful.service';
 import { LanguageService } from 'src/app/servises/language.service';
 import { SafeResourceUrl} from '@angular/platform-browser';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
   selector: 'app-architect',
@@ -11,25 +12,33 @@ import { SafeResourceUrl} from '@angular/platform-browser';
   styleUrls: ['./architect.component.scss']
 })
 export class ArchitectComponent implements OnInit, AfterViewChecked {
-
+  public show: boolean = true;
+  public type: string = 'component';
+  public disabled: boolean = false;
+  public config: SwiperConfigInterface = {
+    a11y: true,
+    direction: 'horizontal',
+    slidesPerView: 1,
+    keyboard: true,
+    mousewheel: true,
+    scrollbar: false,
+    navigation: true,
+    pagination: false
+  };
   public architect = this.route.params.pipe(
     pluck('architectsId')
   );
-
   private architectsInfoID = 'eqqoo4gVdSVoohQvDxlHC';
   public architectsInfo = this.contentfulService.getDataById(this.architectsInfoID);
-
   public lang: string;
   private responseData: object;
   private firstEnterOnPage = true;
   public arch: any;
-
   public architectId: string;
   public lat: number;
   public lng: number;
   public zoom: number;
   public safeSrc: SafeResourceUrl;
-
   public content: object = {
     en: {
       biography: 'Biography',
@@ -74,7 +83,6 @@ export class ArchitectComponent implements OnInit, AfterViewChecked {
     this.lat = +this.arch.coords.split(',')[0];
     this.lng = +this.arch.coords.split(',')[1];
     this.zoom = 8;
-    console.log(this.arch);
   }
 
   public ngOnInit(): void {
