@@ -8,7 +8,7 @@
 * [Contentful](https://www.contentful.com/)
 * [Angular Material](https://material.angular.io/)
 
-### Useful links
+### Deployed project
 
 * [Site](https://nostalgic-goldstine-17dca9.netlify.com/)
 
