@@ -1,8 +1,20 @@
-<div *ngIf="teamInfo | async as members">
-  <div *ngFor="let member of members">
-    <p>{{member[lang].name}}</p>
-    <p>{{member[lang].role}}</p>
-    <p>{{member.link}}</p>
-    <p>{{member.avatar}}</p>
-  </div>
+<h2>{{translate[lang]}}</h2>
+<div class="wrapper" *ngIf="teamInfo | async as members">
+  <mat-card *ngFor="let member of members">
+    <img mat-card-image src={{member.avatar}} alt="avatar">
+    <mat-card-header>
+      <mat-card-title>{{member[lang].name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{member[lang].role}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button href={{member.link}} target="_blank" rel="noopener noreferrer" title="Github">
+        <img class="github-icon"
+          src="https://avatars3.githubusercontent.com/u/9919?s=50&v=50"
+          alt=""
+        />
+      </a>
+    </mat-card-actions>
+  </mat-card>
 </div>

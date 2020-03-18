@@ -27,6 +27,20 @@ import {BoldDirective} from './directives/bold.directive';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FilterPipe } from '../pipes/filter.pipe';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {
+  SwiperModule,
+  SwiperConfigInterface,
+  SWIPER_CONFIG
+} from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  observer: true,
+  direction: 'horizontal',
+  threshold: 50,
+  spaceBetween: 5,
+  slidesPerView: 1,
+  centeredSlides: true
+};
 
 @NgModule({
   declarations: [ArchitectsComponent, ArchitectComponent, BoldDirective, FilterPipe],
@@ -52,6 +66,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FormsModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    SwiperModule,
     AngularYandexMapsModule.forRoot (
       '23b74637-3ecf-4417-8178-bb00a0411ee9')
   ],
@@ -64,9 +79,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatFormFieldModule,
     BoldDirective
   ],
-  providers: [{
-    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
-  }]
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+    },
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ]
 })
 
 export class ArchitectsModule { }

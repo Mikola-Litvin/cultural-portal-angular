@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { map } from 'rxjs/operators';
 import { ContentfulService } from '../servises/contentful.service';
 import { LanguageService } from '../servises/language.service';
 

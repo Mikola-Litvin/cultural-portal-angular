@@ -1,1 +1,139 @@
-<p>styleguide works!</p>
+<section>
+  <h2 class="title">{{translate[lang].title}}</h2>
+  <p>
+    {{translate[lang].description}}
+  </p>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>Headers</td>
+      <td>
+        &nbsp;
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>Text</td>
+      <td>
+        &nbsp;
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-raised-button type="button">
+          Button
+        </button>
+      </td>
+      <td>
+        <code>
+          <br />
+          &emsp; color: #FFFFFF;
+          <br />
+          &emsp; background-color: #32324F;
+          <br />
+          &emsp; border-color: #32324F;
+          <br />
+          &emsp; font-size: 16px;
+          <br />
+          &emsp; font-weight: 300;
+          <br />
+          &nbsp;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" checked />
+        <span class="points">Checked checkbox</span>
+      </td>
+      <td>
+        <code>
+          <br />
+          &emsp; :before
+          <br />
+          &emsp; content: "\2714";
+          <br />
+          &emsp; background-color: #E53935;
+          <br />
+          &emsp; border-color: #E53935;
+          <br />
+          &emsp; background-color: #E53935;
+          <br />
+          &nbsp;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="points">Unchecked checkbox</span>
+      </td>
+      <td>
+        <code>
+          <br />
+          &emsp; :before
+          <br />
+          &emsp; content: "";
+          <br />
+          &emsp; display: flex;
+          <br />
+          &emsp; justify-content: center;
+          <br />
+          &emsp; align-items: center;
+          <br />
+          &emsp; width: 13px;
+          <br />
+          &emsp; height: 13px;
+          <br />
+          &emsp; font-size: 12px;
+          <br />
+          &emsp; color: #FFFFFF;
+          <br />
+          &emsp;  border: 2px solid #737373;
+          <br />
+          &emsp; border-radius: 2px;
+          <br />
+          &nbsp;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>Primary color</td>
+      <td>
+        <span class="color" style="background-color: #32324F;"></span>&nbsp;
+        <code>#32324F;</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Secondary color</span>
+      </td>
+      <td>
+        <span class="color" style="background-color: #F3F3F3;"></span>&nbsp;
+        <code>#F3F3F3;</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Link color</td>
+      <td>
+        <span class="color" style="background-color: #FFFFFF;"></span>&nbsp;
+        <code>#FFFFFF;</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Checkbox color</span>
+      </td>
+      <td>
+        <span class="color" style="background-color: #E53935;"></span>&nbsp;
+        <code>#E53935;</code>
+      </td>
+    </tr>
+  </table>
+</section>

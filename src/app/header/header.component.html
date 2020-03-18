@@ -5,19 +5,19 @@
   <div class="fill-remaining-space"></div>
   <div *ngIf="headerInfo | async as header">
     <nav class="nav-desctop">
-      <a mat-button (click)="goToPage('')">{{header[lang].buttons.home}}</a>
-      <a mat-button (click)="goToPage('architects')">{{header[lang].buttons.architects}}</a>
-      <a mat-button (click)="goToPage('team')">{{header[lang].buttons.team}}</a>
-      <a mat-button (click)="goToPage('worklog')">{{header[lang].buttons.worklog}}</a>
-      <a mat-button (click)="goToPage('styleguide')">{{header[lang].buttons.styleguide}}</a>
+      <a mat-button [routerLink]="['']">{{header[lang].buttons.home}}</a>
+      <a mat-button [routerLink]="['architects']">{{header[lang].buttons.architects}}</a>
+      <a mat-button [routerLink]="['team']">{{header[lang].buttons.team}}</a>
+      <a mat-button [routerLink]="['worklog']">{{header[lang].buttons.worklog}}</a>
+      <a mat-button [routerLink]="['styleguide']">{{header[lang].buttons.styleguide}}</a>
     </nav>
     <nav class="nav-mobile">
       <mat-menu #appMenu="matMenu" xPosition="before" class="app-primary-color">
-        <a mat-menu-item (click)="goToPage('')">{{header[lang].buttons.home}}</a>
-        <a mat-menu-item (click)="goToPage('architects')">{{header[lang].buttons.architects}}</a>
-        <a mat-menu-item (click)="goToPage('team')">{{header[lang].buttons.team}}</a>
-        <a mat-menu-item (click)="goToPage('worklog')">{{header[lang].buttons.worklog}}</a>
-        <a mat-menu-item (click)="goToPage('styleguide')">{{header[lang].buttons.styleguide}}</a>
+        <a mat-menu-item [routerLink]="['']">{{header[lang].buttons.home}}</a>
+        <a mat-menu-item [routerLink]="['architects']">{{header[lang].buttons.architects}}</a>
+        <a mat-menu-item [routerLink]="['team']">{{header[lang].buttons.team}}</a>
+        <a mat-menu-item [routerLink]="['worklog']">{{header[lang].buttons.worklog}}</a>
+        <a mat-menu-item [routerLink]="['styleguide']">{{header[lang].buttons.styleguide}}</a>
       </mat-menu>
       <button mat-icon-button [matMenuTriggerFor]="appMenu">
         <mat-icon>more_vert</mat-icon>

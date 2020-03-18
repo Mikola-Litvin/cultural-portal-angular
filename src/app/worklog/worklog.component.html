@@ -1,3 +1,57 @@
-<div *ngIf="worklogInfo | async as worklog">
-  <p>worklog works!</p>
-</div>
+<section>
+  <div class="worklog" *ngIf="worklog | async as worklogInfo">
+    <h2>Worklog</h2>
+    <h3>Nikolai Shkrabkov</h3>
+    <table>
+      <tr>
+        <th>Time spent</th>
+        <th>Feature</th>
+      </tr>
+      <tr *ngFor="let item of worklogInfo">
+        <td *ngIf="item.author === 'Nikolai Shkrabkov'">{{item.hours}}</td>
+        <td *ngIf="item.author === 'Nikolai Shkrabkov'">{{item.feature}}</td>
+      </tr>
+    </table>
+    <h3>Evgeniy Yakimchuk</h3>
+    <table>
+      <tr>
+        <th>Time spent</th>
+        <th>Feature</th>
+      </tr>
+      <tr *ngFor="let item of worklogInfo">
+        <td *ngIf="item.author === 'Evgeniy Yakimchuk'">{{item.hours}}</td>
+        <td *ngIf="item.author === 'Evgeniy Yakimchuk'">{{item.feature}}</td>
+      </tr>
+    </table>
+    <h3>Tatsiana Kharlamava</h3>
+    <table>
+      <tr>
+        <th>Time spent</th>
+        <th>Feature</th>
+      </tr>
+      <tr *ngFor="let item of worklogInfo">
+        <td *ngIf="item.author === 'Tatsiana Kharlamava'">{{item.hours}}</td>
+        <td *ngIf="item.author === 'Tatsiana Kharlamava'">{{item.feature}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="difficulties">
+    <h2>Difficulties</h2>
+    <p *ngIf="difficulties | async as difficultie">
+      {{difficultie[lang]}}
+    </p>
+  </div>
+  <div class="requirements">
+    <h2>Requirements</h2>
+    <ul *ngIf="requirements | async as requirementsList">
+      <li role="listitem" *ngFor="let requirement of requirementsList">
+        <label>
+          <input type="checkbox" value={{requirement.points}} (change)="calculatePoints($event)" checked={{requirement.status}} />
+          <span class="points">{{requirement.points}}</span>
+          <span>{{requirement[lang]}}</span>
+        </label>
+      </li>
+    </ul>
+    <p class="total-points">Total points - {{sum}}</p>
+  </div>
+</section>

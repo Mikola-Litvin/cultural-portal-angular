@@ -1,31 +1,36 @@
 <div *ngIf="showSpinner else archContent" class="spinner-container">
-  <mat-spinner diameter="20"></mat-spinner>
+  <mat-spinner diameter="50"></mat-spinner>
 </div>
-
-
 <ng-template #archContent>
-  <div class="form-container">
-    <mat-card class="form-container__card">
-      <mat-form-field class="example-form-field">
-        <mat-label>Enter the architect</mat-label>
-        <input matInput type="text" [(ngModel)]="architect">
-        <button mat-button *ngIf="architect" matSuffix mat-icon-button aria-label="Clear" (click)="architect=''">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-    </mat-card>
-  </div>
-  <div class="card-container">
-    <mat-card *ngFor="let item of architectsArr | filter:architect:lang" (click)="sendId(item.id)" class="example-card card">
-      <mat-card-header>
-        <mat-card-title class="card__title">{{ item[lang].name }}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image [src]="item[lang].picture" alt="architect">
-      <mat-card-content>
-        <p class="card__text">
-          {{ item[lang].summary }}
-        </p>
-      </mat-card-content>
-    </mat-card>
+  <div class="wrapper">
+    <div class="form-container">
+      <mat-card class="form-container__card">
+        <mat-form-field class="example-form-field">
+          <mat-label>Enter the architect</mat-label>
+          <input matInput type="text" [(ngModel)]="architect">
+          <button mat-raise-button *ngIf="architect" matSuffix mat-icon-button aria-label="Clear" (click)="architect=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-card>
+    </div>
+    <div class="card-container">
+      <mat-card *ngFor="let item of architectsArr | filter:architect:lang" class="example-card card">
+        <div>
+          <mat-card-header>
+            <mat-card-title class="card__title">{{ item[lang].name }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="item[lang].picture" alt="architect">
+          <mat-card-content>
+            <p class="card__text">
+              {{ item[lang].summary }}
+            </p>
+          </mat-card-content>
+        </div>
+        <mat-card-actions>
+          <a mat-button [routerLink]="[item.id]">{{buttonText[lang]}}</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </ng-template>

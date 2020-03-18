@@ -1,1 +1,18 @@
-<p>home works!</p>
+<section *ngIf="mainInfo | async as info">
+  <div class="info-block">
+    <div class="architect-of-day" *ngIf="architectOfDay | async as architect">
+      <img src={{architect[lang].picture}} alt={{architect[lang].name}}>
+      <div>
+        <h3>{{info[lang].architectOfTheDay}}</h3>
+        <h4>{{architect[lang].name}}</h4>
+        <em>{{architect[lang].dateOfBirth}}</em>
+        <p>{{architect[lang].summary}}</p>
+        <a mat-raised-button [routerLink]="['architects', architect.id]">{{info[lang].buttontext}}</a>
+      </div>
+    </div>
+    <div class="info">
+      <h2 *ngIf="headerInfo | async as info">{{info[lang].title}}</h2>
+      <p>{{info[lang].text}}</p>
+    </div>
+  </div>
+</section>

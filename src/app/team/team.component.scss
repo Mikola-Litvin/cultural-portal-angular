@@ -1,0 +1,53 @@
+h2 {
+  margin: 50px 0;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 80vh;
+  // background-color: #F3F3F3;
+}
+
+.mat-card {
+  max-width: 300px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+
+  @media (min-width: 675px) {
+    transition: transform 0.2s linear;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 1075px) {
+    margin-right: 10px;
+  }
+
+  @media (max-width: 663px) {
+    margin-right: 0;
+  }
+}
+
+.mat-card:last-child {
+  margin-right: 0;
+}
+
+.mat-card-header {
+  justify-content: center;
+}
+
+.mat-card-actions {
+  text-align: center;
+}
+
+.github-icon {
+  width: 50px;
+}

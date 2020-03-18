@@ -1,5 +1,5 @@
 :host {
-  width:100%
+  width: 100%;
 }
 
 .wrapper {
@@ -9,7 +9,6 @@
   padding: 100px 20px;
   justify-content: space-around;
   height: auto;
-  background-color: white;
 
   @media screen and (max-width: 660px) {
     flex-direction: column;
@@ -26,47 +25,55 @@
   }
 }
 
+mgl-timeline {
+  margin-top: 40px;
+}
+
+mgl-timeline-entry-header {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+mgl-timeline-entry-dot {
+  background-color: #32324F;
+  z-index: 5;
+}
+
+.mat-flat-button {
+  color: #FFFFFF;
+  background-color: #E53935 !important;
+  border-radius: 10px !important;
+  box-shadow:2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 .arch{
-  height:100%;
-  background-color: white;
+  height: 100%;
 }
 
 .panel {
-  background-color:  white !important;
   padding: 40px 0;
   color: #212121;
 }
 
 .title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #a0a0a0;
-  margin: 20px 0;
-  padding: 30px;
-  box-sizing: border-box;
   width: 100%;
   height: auto;
-  color: white;
-}
-
-.line {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #a0a0a0;
-  margin-bottom: 10px;
+  margin: 20px 0 40px;
+  padding: 30px 20px;
+  font-weight: 500;
+  color: #32324F;
+  background-color: #F3F3F3;
   box-sizing: border-box;
-  height: 345px;
-  width: 10px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 }
 
 .header {
-  background-color: #a0a0a0;
-  padding: 15px 30px;
   height: 50px;
-  box-sizing: border-box;
+  padding: 15px 30px;
   color: white;
+  background-color: #32324F;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
 .screen {
@@ -89,6 +96,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  
   @media screen and (max-width: 660px){
     justify-content: center;
     width:100%;
@@ -117,9 +125,12 @@
 
   &__size-img{
     width: 400px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+
     @media screen and (max-width: 900px) {
       width: 300px;
     }
+
     @media screen and (max-width: 660px) {
       width: 100%;
       min-width: 300px;
@@ -133,7 +144,6 @@
     width: 400px;
     height: 100%;
     line-height: 30px;
-    color: white;
     font-weight: bold;
 
     @media screen and (max-width: 900px) {
@@ -148,7 +158,7 @@
       }
     }
 
-    & > p{
+    & > p {
       @media screen and (max-width: 660px) {
         text-align: center;
       }
@@ -170,19 +180,18 @@
 
   &__name {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 55px;
+    margin-bottom: 70px;
+    padding-bottom: 5px;
     font-size: 30px;
-    color: white;
-    background-color: #212121;
-    margin-bottom: 35px;
-    padding: 0 10px;
+    color: #32324F;
+    border-bottom: 2px solid;
     box-sizing: border-box;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 
     @media screen and (max-width: 660px) {
-      font-size: 18px;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -281,28 +290,6 @@
   }
 }
 
-.mat-expansion-panel-header.mat-expanded,
-.mat-expansion-panel-header:hover {
-  border-radius: 0 !important;
-  box-shadow: none;
-  background-color: #32324f !important;
-}
-
-.mat-expansion-panel-header,
-.mat-expansion-panel-header:focus{
-  border-radius: 0 !important;
-  background-color: #a0a0a0;
-  box-shadow: none;
-}
-
-.mat-stepper-vertical,
-.mat-expansion-panel,
-.mat-step-header {
-  border-radius: 0 !important;
-  background-color: white!important;
-  box-shadow: none;
-}
-
 .ng-star-inserted,
 .color {
   color: #212121;
@@ -321,38 +308,7 @@ mgl-timeline-entry {
   color: white;
 }
 
-.carousel {
-  width: 300px;
-  margin-bottom: 30px;
-  overflow: hidden;
-
-  @media  screen and (min-width: 900px) {
-    width: 75%;
-    margin-bottom: 30px;
-  }
-}
-
-.carousel{
-  @media  screen and (min-width: 900px) {
-    width: 50% !important;;
-  }
-}
-
-.carousel-control-next{
-  @media  screen and (min-width: 900px) {
-    left: 40px !important;
-  }
-}
-
-.carousel-control-prev{
-  @media  screen and (min-width: 900px) {
-    right: 40px;
-  }
-}
-
-
 /* Modal Window */
-
 .modal,
 .modal .modal__overlay {
   position: absolute;
@@ -472,4 +428,48 @@ mgl-timeline-entry {
   border-radius: 0;
   background-color: #212121;
   margin-top: 100px;
+}
+
+.content-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  min-height: 0;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
+
+  @media (max-width: 400px) {
+    height: 200px;
+  }
+
+  @media (max-width: 360px) {
+    height: 180px;
+  }
+
+  @media (max-width: 320px) {
+    height: 150px;
+  }
+}
+
+.swiper-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.swiper-slide {
+  overflow: hidden !important;
+  
+  & img{
+    width: 100%;
+    height: auto;
+  }
 }
